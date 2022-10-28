@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+// Numbers to Words using Tail Recursion...
+
+void saydigits(int n, string arr[]){
+    // Base case
+    if(n==0)
+        return;
+    
+    //processing  
+    int digit = n % 10;
+    n = n / 10;
+    
+    //recursive call
+    saydigits(n, arr);
+    
+    cout << arr[digit] << " ";
+}
+int main() {
+    
+    //taking input
+    int n;
+    cout << "Enter a number :- ";
+    cin >> n;
+    
+    string arr[10] = {"zero", "one", "two","three", "four", "five", "six", "seven", "eight", "nine"};
+    
+    saydigits(n, arr);
+        
+    return 0;
+}
